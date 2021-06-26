@@ -1,3 +1,3 @@
 # letmeask
 
-Projeto :poop: da Rocketseat
+Projeto da Rocketseat
