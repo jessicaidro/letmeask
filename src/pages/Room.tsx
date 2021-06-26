@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
@@ -102,8 +102,11 @@ export function Room() {
             key={question.id}
             content={question.content}
             author={question.author}
+            isAnswered={question.isAnswered}
+            isHighlighted={question.isHighlighted}
           >
-            <button
+           { !question.isAnswered && (
+              <button
               className={`like-button ${question.likeId ? 'liked' : ''}`}
               type="button"
               aria-label="Marcar como gostei"
@@ -115,6 +118,7 @@ export function Room() {
             </svg>
 
             </button>
+           )}
           </Question>
         )
       })}
